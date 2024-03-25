@@ -7,7 +7,7 @@ $frutas = array("maça", "banana", "morango", "uva", "abacaxi", "pera",
 
 //imprimir o meu array na tela
 foreach ( $frutas as $lista ){
-echo  $lista . "<br>";
+echo  $lista . ", ";
 
 
 }

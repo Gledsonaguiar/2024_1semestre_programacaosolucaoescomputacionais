@@ -4,7 +4,7 @@ $paises = array("Brasil", "Argentina", "Uruguai", "Paraguai",
 
 //imprimir com o laço FOR:
 foreach ($paises as $pais ){
-echo $pais . "<br>";
+echo $pais . "/";
 }
 
 ?>

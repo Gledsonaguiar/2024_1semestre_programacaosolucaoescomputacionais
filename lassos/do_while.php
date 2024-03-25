@@ -1,5 +1,5 @@
 <?php
-    echo Maior e menor de idade "<br>";
+    echo " Maior e menor de idade <br>";
     $i = 1;
 
     do{
@@ -11,12 +11,13 @@
         }else{
             echo " = Maior de idade"; 
         }
+    }
 
-     $i++;
+    $i++;
 
          
 
-    while($i > 22);{
+    while($i < 22);{
 
     }
 ?>

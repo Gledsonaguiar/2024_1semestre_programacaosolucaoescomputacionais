@@ -1,19 +1,24 @@
 <?php
 
-    $carros = array ("Doblo", "Opala", "Renegade");
+    $carros = array ("Doblo", "Opala", "Renegade", "celta");
     
 
     foreach($carros as $car){
-        print($car . "<br>");
+        print($car .  ", ");
+        
+        
 
     }
-    echo " $ Meu caro: $carros[0] <hr>";
+    echo"<br><br>";
+    echo " Meu caro: $carros[3] <hr>";    
+    
     print_r( $carros);
-    echo "<hr";
+    echo "<hr>";
     var_dump($carros);
 
     $carros[0] = "Uno";
     echo "<hr";
-    var_dump ( "$carros");
+    print_r( $carros);
+    
 
 
