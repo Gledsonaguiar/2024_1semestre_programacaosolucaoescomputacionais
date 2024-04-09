@@ -9,9 +9,9 @@ $produtos = array(
     "PAN7845" => "Jogo de panelas tramontina");
 
     $produtos = array($produtos, $produto);
-    $produtos = array($produtos);
+    $produtos = array($produto);
     
-    echo "$produto";
+    eco $produtos['EL1241'];
 
 
 

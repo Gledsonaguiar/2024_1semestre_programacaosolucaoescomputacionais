@@ -18,3 +18,9 @@ function resultado($imc){
     echo calculoIMC($imc);
 }
 }
+function resultado( $imc ){
+    if($imc < 16.9){
+        echo "Muiton abaixo do peso";
+        elseif($imc <18.4){
+            echo "Abaixo do peso";
+            

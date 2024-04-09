@@ -11,9 +11,11 @@
         }else{
             echo " = Maior de idade"; 
         }
+        $i++;
     }
+    
 
-    $i++;
+    
 
          
 

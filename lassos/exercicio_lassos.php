@@ -6,7 +6,7 @@ $b = 2;
 
 /*Condição criada onde para ser validada
 a divisão entre $a e $b deve ser igual a 2*/
-if ($a/$b == 2) {
+if ($a/$b == 1) {
 
   //Retorno da condição
   echo "O resultado da divisão é 2";
