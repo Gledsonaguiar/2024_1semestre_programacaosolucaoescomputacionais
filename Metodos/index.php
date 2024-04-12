@@ -26,7 +26,9 @@ function imprimirareacirculo($raio){
 imprimirMeuNome();
 if(isset($_GET["x"])){
     $v1 = $_GET["x"];
-else
+}else{
+
+
 $v1 = 0;
 }
 

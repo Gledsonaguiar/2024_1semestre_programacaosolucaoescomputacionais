@@ -24,3 +24,6 @@ function resultado( $imc ){
         elseif($imc <18.4){
             echo "Abaixo do peso";
             
+        }
+    }
+}
