@@ -1,10 +1,10 @@
 <?php
-require_once ("clsBicicleta.php");
+require_once("clsBicicleta.php");
 class MountainBike extends Bicicleta
 {
     private $marcha;
 
-    public function__construct($id, $marca, $cor, $marcha)
+    public function __construct($id, $marca, $cor, $marcha)
     {
         parent::__construct($id, $marca, $cor);
         $this->marcha = $marcha;

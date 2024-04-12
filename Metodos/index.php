@@ -34,10 +34,11 @@ $v1 = 0;
 
 if(isset($_GET["y"]))
 $v2 = $_GET["y"];
+
 else
 $v2 = 0;
 
-isset($_GET["r"]) ? = $raio
+isset($_GET["r"]) ? =  $raio
 $v1 = $_GET["x"];
 $v2 = $_GET["y"];
 $raio = $_GET["r"];

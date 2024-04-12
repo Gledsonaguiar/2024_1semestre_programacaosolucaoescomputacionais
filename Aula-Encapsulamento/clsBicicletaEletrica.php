@@ -6,7 +6,8 @@ class BicicletaEletrica extends Bicicleta
 
     public function __construct($id, $marca, $cor, $ligada, $carga)
     {
-        parent::__construct($id, $marca, $cor);
+        parent:: __construct($id, $marca, $cor);
+        
         $this->ligada = $ligada;
         $this->carga = $carga;
     }
@@ -48,7 +49,7 @@ class BicicletaEletrica extends Bicicleta
 
     public function carregar($valor){
         $this->setCarga($valor);
-        echo "<br>Bateria carregada $valor.";
+        echo "<br>Bateria carregada $valor";
     }
 
 
