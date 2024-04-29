@@ -9,6 +9,7 @@
             <th>Nome</th>
             <th>Editar</th>
             <th>Excluir</th>
+        <tr>
         <?php
             foreach ($consulta as $linha){
                 echo"<tr>

@@ -1,20 +1,37 @@
 <?php
 
-Class Cidade extends conexao{
-
-    public $nome;
-    public $tabela = 'cidade';
-
-    //construtor
-    public function __construct(){
-        parent:: __construct();
+require_once('conexao.php');
+class Cidade extends {
+    private $id;
+    private $nome;
+    private $tabela = cidade;
+}
+//construtor
+public function __construct(){
+    parent:: __construct();
+}
+//getter and setter
+    public function getId(){
+        return $this->id;
     }
+    public function setId( $id ){
+        $this->id = $id;
+    }
+    public function getNome(){
+        return $this->nome;
+    }
+    public function setNome( $nome ){
+        this->nome = setNome( $nome );
+    }
+
+
+  
     //consulta no banco
     public function consulta(){
-        $sql = "SELECT * FROM $this->tabela";
+        $sql = "SELECT id, nome FROM $this->tabela";
         $result = $this->conn->query($sql)or die("Falha na consulta");
     }
-}
+
 public function inserir($nome){
     $sql = "INSERT INTO $this->tabela(nome) VALUES(?)";
     $stmt = $this->conn->prepare($sql);
