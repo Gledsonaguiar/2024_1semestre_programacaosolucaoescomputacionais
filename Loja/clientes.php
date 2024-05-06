@@ -13,6 +13,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
     <h1>Clientes</h1>
 
     <form method="POST" action="controller/salvarCliente.php?inserir">
@@ -43,6 +44,18 @@
 
         <input type="Enviar" value="Salvar" />
         <input type="repor" value="Limpar" />
+=======
+    <h1>Cidades</h1>
+
+    <form method="POST" action="controller/salvarCliente.php?inserir">
+        <label>Salário: </label>
+        <label>Slário: </label>
+        <input type="text" placeholder="Digite o nome da cidade..." name="txtNome" />
+        <br>
+        <input type="submit" value="Salvar" />
+        <input type="reset" value="limpar" />
+
+>>>>>>> cbc2d259b9e3a701795408bab736a725115ddb3a
     </form>
     <hr>
 
@@ -50,7 +63,10 @@
     
 
     $cidades = CidadeDAO::getCidades();
+<<<<<<< HEAD
 
+=======
+>>>>>>> cbc2d259b9e3a701795408bab736a725115ddb3a
         if(count($cidades) == 0){
             
             echo "<h1>Nenhuma cidade cadastrada!<h1>";
@@ -104,13 +120,20 @@
         </tr>*/
     
     if (isset($_REQUEST["nomeVazio"])) {
+<<<<<<< HEAD
         echo "<script> alert('O campo nome não pode ser vaazio!');</script>";
     }
+=======
+>>>>>>> cbc2d259b9e3a701795408bab736a725115ddb3a
 
     if (isset($_REQUEST["cidadeExcluida"])) {
         echo "<script>alert('Cidade excluida com sucesso!');</script>";
     }
+<<<<<<< HEAD
 
+=======
+}
+>>>>>>> cbc2d259b9e3a701795408bab736a725115ddb3a
 
     if (isset($_REQUEST["nome"])) {
         $nome = $_REQUEST["nome"];
