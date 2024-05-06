@@ -5,7 +5,7 @@
         private $nome;
         private $tabela = 'cidade';
 
-<<<<<<< HEAD
+
 	//construtor
     public function __construct(){
         parent::__construct();	
