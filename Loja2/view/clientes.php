@@ -10,15 +10,23 @@
 <body>
     <h1>Clientes</h1>
 
-    <form method="POST" action="../controller/clienteController.php?action=inserirCidade">
+    <form method="POST" action="../controller/clienteController.php?action=inserirCliente">
         <label>Nome: </label>
-        <input type="text" placeholder="Digite o nome do cliente..." name="txtNome" />
+        <input type="text" placeholder="Nome do cliente..." name="txtNome" />
         <br>
-        <input type="date"  name="txtNome" />
+
+        <label>Data de Nascimento: </label>
+        <input type="Date" nome="txtnascimento" />
         <br>
+
         <label>Salário: </label>
         <input type="text" placeholder="Salário" name="txtSalário" />
         <br>
+         
+        <label>Código Cidade: </label>
+        <input type="text" placeholder="Código Cidade" name="txtCodCidade" />
+        <br>
+
         <input type="submit" value="Salvar" />
         <input type="reset" value="Limpar" />
     </form>
@@ -27,22 +35,22 @@
     <?php
         require_once('consultaClientes.php');
 
-        if( isset($_REQUEST["nomeVazio"])){
+        if( isset($_REQUEST["campoVazio"])){
             echo "<script> alert('Todos os campos devem ser preenchidos!'); </script>";
         }
 
         if( isset($_REQUEST["nome"])){
             $nome = $_REQUEST["nome"];
-            echo "<script> alert('Cliente $nome cadastrada com sucesso!'); </script>";
+            echo "<script> alert('Cliente $nome cadastrado com sucesso!'); </script>";
         }
 
         if( isset($_REQUEST["novoNome"])){
             $novoNome = $_REQUEST["novoNome"];
-            echo "<script> alert('Cliente $novoNome foi atualizada com sucesso!'); </script>";
+            echo "<script> alert('Cliente $novoNome foi atualizado com sucesso!'); </script>";
         }
 
         if( isset($_REQUEST["excluido"])){
-            echo "<script> alert('Cliente excluida com sucesso!'); </script>";
+            echo "<script> alert('Cliente excluido com sucesso!'); </script>";
         }
 
         if( isset($_REQUEST["erro"])){

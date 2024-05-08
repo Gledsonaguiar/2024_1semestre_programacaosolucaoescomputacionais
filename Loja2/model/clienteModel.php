@@ -52,7 +52,7 @@
     }
    
     public function consultaID($id){
-        $nome = '';$nascimento='';$salario='';$codCidade='';
+        $nome = '';$Nascimento='';$salario='';$codCidade='';
         $sql = "SELECT nome, nascimento, salario, codCidade FROM
                 $this->tabela WHERE id = ?";
         $stmt = $this->conn->prepare($sql);

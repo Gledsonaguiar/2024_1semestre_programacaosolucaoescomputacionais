@@ -5,8 +5,7 @@
         private $nome;
         private $tabela = 'cidade';
 
-
-	//construtor
+    //construtor
     public function __construct(){
         parent::__construct();	
     }
@@ -31,7 +30,6 @@
 
 	
        
-
     //consulta no banco
     public function consulta(){
         $sql = "SELECT id,nome FROM $this->tabela";
@@ -46,6 +44,7 @@
         $this->conn->close();
     }
 
+    //consulta no banco
     public function consultaID($id){
         $nome = '';
         $sql = "SELECT nome FROM $this->tabela WHERE id = ?";
@@ -65,48 +64,8 @@
         $this->conn->close();
         
     }
-=======
-require_once('conexao.php');
-class Cidade extends {
-    private $id;
-    private $nome;
-    private $tabela = cidade;
-}
-//construtor
-public function __construct(){
-    parent:: __construct();
-}
-//getter and setter
-    public function getId(){
-        return $this->id;
-    }
-    public function setId( $id ){
-        $this->id = $id;
-    }
-    public function getNome(){
-        return $this->nome;
-    }
-    public function setNome( $nome ){
-        this->nome = setNome( $nome );
-    }
 
-
-  
-    //consulta no banco
-    public function consulta(){
-        $sql = "SELECT id, nome FROM $this->tabela";
-        $result = $this->conn->query($sql)or die("Falha na consulta");
-    }
-
-public function inserir($nome){
-    $sql = "INSERT INTO $this->tabela(nome) VALUES(?)";
-    $stmt = $this->conn->prepare($sql);
-    $stmt->bind_param('s',$nome);
-    $stmt->execute();
->>>>>>> cbc2d259b9e3a701795408bab736a725115ddb3a
-    
-
-    public function inserir($nome){
+       public function inserir($nome){
         $sql = "INSERT INTO $this->tabela(nome) VALUES(?)";
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param('s',$nome);
@@ -120,7 +79,6 @@ public function inserir($nome){
         $stmt->close();
         $this->conn->close();
     }
-<<<<<<< HEAD
 
 
     public function editar($nome, $id){
@@ -138,7 +96,7 @@ public function inserir($nome){
         $stmt->close();
         $this->conn->close();  
     }
-
+    
 
    
     
@@ -157,18 +115,11 @@ public function inserir($nome){
         }
         $stmt->close();
         $this->conn->close();
-
-
-        
+  
     }
 
 
-    
 }
 
+
 ?>
-=======
-    $stmt->close();
-    $this->conn->close();
-}
->>>>>>> cbc2d259b9e3a701795408bab736a725115ddb3a

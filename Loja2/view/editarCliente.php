@@ -4,9 +4,9 @@
     $controller = new clienteController();
     $cliente = $controller->consultaID($id);
     $nome = $cliente->getNome();
-    $nome = $nascimento->getNascimento();
-    $nome = $cidade->getNome();
-    $nome = $cidade->getNome();
+    $Nascimento = $nascimento->getNascimento();
+    $salario = $salario->getSalario();
+    $codCidade = $cidade->getCodCidade();
 
 ?>
 <!DOCTYPE html>
@@ -22,17 +22,19 @@
     <h1>Editar Cliente</h1>
 
     <form method="POST" action="../controller/clienteController.php?action=editarCliente">
+        <input type="hidden" value="<?$id?>" nome="id" />
         <label>Nome: </label>
         <input type="text" value="<?=$nome?>" name="txtNome" />
         <br>
         <label>Nascimento: </label>
-        <input type="text" value="<?=$nascimento?>" name="txtNascimento" />
+        <input type="date" value="<?=$Nascimento?>" name="txtNascimento" />
         <br>
         <label>Salário: </label>
         <input type="text" value="<?=$salario?>" name="txtSalario" />
         <br>
         <label>Código Cidade: </label>
         <input type="text" value="<?=$codCidade?>" name="txtcodCidade" />
+        <br>
         <input type="submit" value="Salvar" />
         <input type="reset" value="Limpar" />
     </form>
@@ -46,7 +48,7 @@
 
         if( isset($_REQUEST["nome"])){
             $nome = $_REQUEST["nome"];
-            echo "<script> alert('Cliente $nome cadastrada com sucesso!'); </script>";
+            echo "<script> alert('Cliente $nome cadastrado com sucesso!'); </script>";
         }
 
         if( isset($_REQUEST["erro"])){

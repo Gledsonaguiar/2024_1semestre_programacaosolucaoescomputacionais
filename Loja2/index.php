@@ -1,5 +1,5 @@
 <?php
 
-echo ('Location:..view/admin.php');
+header ('Location:..view/admin.php');
 
 ?>

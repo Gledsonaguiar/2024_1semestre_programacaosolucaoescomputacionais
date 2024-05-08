@@ -18,8 +18,8 @@ abstract class conexao
 			$this->servidor,
 			$this->user,
 			$this->pass,
-			$this->banco
-		);
+			$this->banco);
 
 	}
 }
+?>
