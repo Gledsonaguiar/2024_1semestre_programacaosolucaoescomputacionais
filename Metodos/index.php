@@ -38,15 +38,16 @@ $v2 = $_GET["y"];
 else
 $v2 = 0;
 
-isset($_GET["r"]) ? =  $raio
-$v1 = $_GET["x"];
-$v2 = $_GET["y"];
-$raio = $_GET["r"];
-$result = somar( $v1, $v2 );
-//$result = somar( 5.1, 10);
-echo "<br>Resultado: " .$result;
+isset($_GET["r"]) ?  $Raio = $_GET["r"] : $Raio = 0;
+
+$resultado = somar( $v1 , $v2 );
+//$result = somar( 5,1 ; 10,0);
+
+echo "<br>Resultado: " .$resultado;
 echo "<hr> Valor do PI: " .getPI();
-imprimirAreaCirculo( $raio );
+imprimirAreaCirculo( $Raio );
 imprimirAreaCirculo( 10 );
+
+
 
 

@@ -75,18 +75,20 @@
         $this->conn->close();
     }
 
-
-    public function inserir($nome, $nascimento, $salario, $codCidade){
+    
+    public function inserir($nome, $Nascimento, $salario, $codCidade){
             $sql = "INSERT INTO $this->tabela(nome, nascimento, salario, codCidade)
             VALUES(?,?,?,?,)";
              $stmt = $this->conn->prepare($sql);
              $stmt->bind_param('ssdi', $nome, $nascimento, $salario, $codCidade);
              $stmt->execute();
+    
         
         if($stmt == true){
             header( "Location: ../view/Clientes.php?nome=$nome");
         }else{
             die("Falha no Cadastro!");
+
         }
         $stmt->close();
         $this->conn->close();  
@@ -100,7 +102,7 @@
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param('ssdii', $nome, $nascimento, $salario, $codCidade, $id);
         $stmt->execute();
-        
+    
         if($stmt == true){
             header( "Location: ../view/Clientes.php?novoNome=$nome");
         }else{
@@ -113,7 +115,7 @@
 
 
 
-    public function  apagar($id){
+    public function apagar($id){
 
         $sql = "DELETE FROM $this->tabela WHERE id = ?";
 
@@ -122,7 +124,7 @@
         $stmt->execute();
 
         if($stmt == true){
- header( "Location: .. /view/Clientes.php?excluido");
+            header( "Location: .. /view/Clientes.php?excluido");
         }else{
             die("Falha ao excluir!");
         }
@@ -132,8 +134,6 @@
 
 
     }
-
-
 
 }
 
