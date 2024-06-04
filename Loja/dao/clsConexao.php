@@ -1,59 +1,55 @@
 <?php
+class Conexao {
 
-class Conexao{
-
+//ABRIR
     private static function abrir(){
-        $banco = "market";
-        $local = "localhost";//127.0.0.1
+        $banco = "market_2024_1";
+        $local = "localhost";
         $user = "root";
-        $senha = "";
-        $conn = mysqli_connect($local, $user, $senha, $banco);
-        if ($conn) {
+        $senha = "usbw";
+        $conn = mysqli_connect ($local, $user, $senha, $banco);
+        if ($conn){
             return $conn;
-        } else {
+        }else{
             return NULL;
         }
     }
-    private static function fechar($conn)
-    {
-        if ($conn)
-            mysqli_close($conn);
+
+//FECHAR
+    private static function fechar($conn){
+        if ($conn) mysqli_close($conn);
     }
 
-    public static function consultar($sql)
-    {
+//CONSULTAR
+    public static function consultar($sql){
         $conn = self::abrir();
-        if ($conn) {
+        if ($conn){
             $result = mysqli_query($conn, $sql);
             self::fechar($conn);
             return $result;
-        } else {
+        }else{
             return NULL;
         }
-
     }
-    public static function executar($sql)
-    {
+
+//EXECUTAR
+    public static function executar($sql){
         $conn = self::abrir();
-        if ($conn) {
+        if ($conn){
             mysqli_query($conn, $sql);
             self::fechar($conn);
-        }
-
+            }
     }
-
-    public static function executarComRetornoId($sql)
-    {
+    
+//CONSULTAR COM RETORNO ID
+    public static function executarComRetornoId($sql){
         $conn = self::abrir();
         $id = 0;
-        if ($conn) {
+        if ($conn){
             mysqli_query($conn, $sql);
-
             $id = mysqli_insert_id($conn);
             self::fechar($conn);
-        }
-
+            }
         return $id;
     }
-
 }

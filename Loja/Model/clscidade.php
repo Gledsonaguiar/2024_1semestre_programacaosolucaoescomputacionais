@@ -1,16 +1,11 @@
 <?php
-
-class Cidade
-{
-
+class Cidade{
     public $id;
     public $nome;
 
-    public function __construct($id = NULL, $nome = NULL)
-    {
-        $this->id = $id;
-        $this->nome = $nome;
-
+    public function __construct($id_cidade=NULL, $nome_cidade=NULL){
+        $this->id= $id_cidade;
+        $this->nome=$nome_cidade;
     }
 
 }
