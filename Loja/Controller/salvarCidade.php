@@ -1,37 +1,39 @@
+
 <?php
 
 include_once("../dao/clsConexao.php");
+
 include_once("../dao/clsCidadeDAO.php");
 include_once("../model/clsCidade.php");
 
-//INSERIR CIDADE
+include_once("../dao/clsClienteDAO.php");
+include_once("../model/clsCliente.php");
 
-if(isset($_REQUEST["inserir"])){
+if( isset($_REQUEST["inserir"]) ){
     $nome = $_POST["txtNome"];
-    if(strlen($nome) == 0 ){
-        header("Location: ../cidades.php?nomeVazio");
+    if( strlen( $nome ) == 0 ){
+        header( "Location: ../clientes.php?nomeVazio");
     }else{
-        $novaCid = new Cidade();
-        $novaCid->nome = $nome;
-        CidadeDAO:: inserir($novaCid);
-        header("Location: ../cidades.php?nome=$nome");
+        $cid = new Cidade( );
+        $cid->id = $_POST["txtCidade"];
+
+        $cli = new Cliente();
+        $cli->nome = $nome;
+
+        $salario = $_POST["txtSalario"];
+        $salario = str_replace("," , "." , $salario);
+
+        $cli->salario = $salario;
+        $cli->nascimento = $_POST["txtNascimento"];
+        $cli->cidade = $cid;
+
+        ClienteDAO::inserir( $cli );
+        header( "Location: ../clientes.php?nome=$nome");
     }
 }
 
-// EXCLUIR CIDADE
-
-if(isset($_REQUEST["excluir"]) && isset($_REQUEST["id"])){
-    $id = $_REQUEST["id"];
-    CidadeDAO:: excluir($id);
-    header("Location: ../cidades.php?cidadeExcluida");
-}
-
-
-// EDITAR CIDADE
-
-if( isset( $_REQUEST["editar"] ) &&  isset( $_REQUEST["id"] ) ){
-    $nome = $_POST["txtNome"];
-    $id = $_REQUEST["id"];
-    CidadeDAO::editar( $nome, $id );
-    header( "Location: ../cidades.php?cidadeEditada");
+if( isset( $_REQUEST["excluir"] ) &&  isset( $_REQUEST["id"] ) ){
+    $id = $_REQUEST["id"] ;
+    ClienteDAO::excluir( $id );
+    header( "Location: ../clientes.php?clienteExcluido");
 }

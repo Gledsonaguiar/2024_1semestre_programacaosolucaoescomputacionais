@@ -10,7 +10,6 @@ include_once("../dao/clsUsuarioDAO.php");
 include_once("../dao/clsConexao.php");
 
 $user = UsuarioDAO::getUsuarioByEmailSenha( $email , $senha );
-
 if( !$user ) {
 	header("Location: ../index.php?usuarioInvalido");
 }else{
