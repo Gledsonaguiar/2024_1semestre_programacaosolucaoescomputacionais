@@ -1,9 +1,9 @@
 <?php
-class Conexao {
+class Conexao{
 
 //ABRIR
     private static function abrir(){
-        $banco = "market_2024_1";
+        $banco = "market";
         $local = "localhost";
         $user = "root";
         $senha = "";
@@ -51,5 +51,7 @@ class Conexao {
             self::fechar($conn);
             }
         return $id;
+    
+        }
     }
-}
+
